@@ -1,6 +1,6 @@
 name: "Grafana Cloud"
 description: "Send metrics & logs to Grafana Cloud"
-version: "0.1.3"
+version: "0.1.4"
 slug: "grafana_cloud"
 init: false
 arch:
@@ -20,7 +20,8 @@ schema:
   log_level: list(debug|info|warn|error)
 homeassistant_api: true
 map:
-  - homeassistant_config
+  - type: homeassistant_config
+    path: /custom/config
   - addon_config:rw
 ports:
   80/tcp: null
