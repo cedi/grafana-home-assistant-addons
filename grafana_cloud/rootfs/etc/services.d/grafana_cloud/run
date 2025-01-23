@@ -14,6 +14,7 @@ export ALLOY_DEPLOY_MODE=hass-addon-grafana-cloud
 
 CONFIG_FILE="/config.alloy"
 if bashio::fs.file_exists "/homeassistant_config/config.alloy"; then
+  bashio::log.info "Using custom config.alloy"
   CONFIG_FILE="/homeassistant_config/config.alloy"
 fi
 
