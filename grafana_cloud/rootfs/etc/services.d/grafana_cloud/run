@@ -13,8 +13,8 @@ export SCRAPE_INTERVAL=$(bashio::config 'scrape_interval')
 export ALLOY_DEPLOY_MODE=hass-addon-grafana-cloud
 
 CONFIG_FILE="/config.alloy"
-if bashio::fs.file_exists "/config/config.alloy"; then
-  CONFIG_FILE="/config/config.alloy"
+if bashio::fs.file_exists "/homeassistant_config/config.alloy"; then
+  CONFIG_FILE="/homeassistant_config/config.alloy"
 fi
 
 exec /usr/bin/grafana-alloy run --server.http.listen-addr=0.0.0.0:80 --storage.path=/config $CONFIG_FILE
